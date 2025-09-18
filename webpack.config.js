@@ -10,6 +10,14 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true, // clears old files in dist before each build
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,       // look for .css files
+        use: ["style-loader", "css-loader"], // process them with these
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html", // take from src
