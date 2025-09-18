@@ -4,3 +4,87 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+:root {
+    --color-primary: #2C2C2C;
+    /* Charcoal */
+    --color-secondary: #B22222;
+    /* Firebrick Red */
+    --color-highlight: #F4A261;
+    /* Warm Orange */
+    --color-light: #FAF3E0;
+    /* Cream */
+    --color-text-dark: #333333;
+    /* Dark text */
+    --color-text-light: #FFFFFF;
+    /* Light text */
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+button {
+    background-color: var(--color-secondary);
+    /* firebrick red */
+    color: var(--color-text-light);
+    /* white text */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-highlight);
+    /* warm orange */
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    /* press effect */
+    background-color: var(--color-primary);
+    /* charcoal */
+}
+
+body.home {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),   /* top overlay */
+      rgba(0, 0, 0, 0.5)    /* bottom overlay */
+    ),
+    url("/src/assets/images/hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+
+.footer {
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    bottom: 0;
+}

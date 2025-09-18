@@ -16,6 +16,10 @@ module.exports = {
         test: /\.css$/i,       // look for .css files
         use: ["style-loader", "css-loader"], // process them with these
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset/resource", // built-in in Webpack 5
+      },
     ],
   },
   plugins: [
@@ -26,5 +30,5 @@ module.exports = {
   devServer: {
     static: "./dist", // tell dev server to serve files from dist
     open: true,       // auto-open browser when running `npx webpack serve`
-  },
+  }
 };
