@@ -1,6 +1,13 @@
 import "./style/style.css";
-import { loadHome } from "./modules/pages.js";
+import { loadHome, loadMenu } from "./modules/pages.js";
 
 const content = document.getElementById("content");
+const homeBtn = document.getElementById("home");
+const menuBtn = document.getElementById("menu");
 
-loadHome(content);
+// loadHome(content);
+
+homeBtn.addEventListener('click', () => loadHome(content));
+menuBtn.addEventListener('click', () => loadMenu(content));
+
+
