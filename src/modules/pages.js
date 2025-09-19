@@ -33,10 +33,26 @@ export const loadHome = (container) => {
 
 export const loadMenu = (container) => {
   setBodyClass("");
+  setDivClass("grid");
   container.innerHTML = ``;
-  container.innerHTML = `
-            <section class="hero">
-                <h1 class="hero-title">Food that speaks for itself.</h1>
-            </section>`;
+
+  // loops through each objects 
+  menu.forEach(dish => {
+    container.innerHTML += `
+    <div class="menu-card">
+        <img src="images/${dish.img}" alt="${dish.name}" class="menu-image">
+        <div class="menu-content">
+          <div class="menu-header">
+            <h3 class="menu-title">${dish.name}</h3>
+            <span class="menu-price">$${dish.price}</span>
+          </div>
+          <p class="menu-description">
+            ${dish.description}
+          </p>
+          <div class="accent-line"></div>
+        </div>
+      </div>
+    `;
+  });
 
 }

@@ -1,34 +1,37 @@
-// webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js", // where your code starts
+  entry: "./src/index.js",
   output: {
-    filename: "main.js", // name of the bundle
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true, // clears old files in dist before each build
+    clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.css$/i,       // look for .css files
-        use: ["style-loader", "css-loader"], // process them with these
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset/resource", // built-in in Webpack 5
+        test: /\.html$/,
+        use: ["html-loader"],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // take from src
+      template: "./src/index.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/assets/images", to: "images" }],
     }),
   ],
   devServer: {
-    static: "./dist", // tell dev server to serve files from dist
-    open: true,       // auto-open browser when running `npx webpack serve`
-  }
+    static: "./dist",
+    open: true,
+  },
 };

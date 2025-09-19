@@ -5,7 +5,7 @@ const content = document.getElementById("content");
 const homeBtn = document.getElementById("home");
 const menuBtn = document.getElementById("menu");
 
-// loadHome(content);
+loadHome(content);
 
 homeBtn.addEventListener('click', () => loadHome(content));
 menuBtn.addEventListener('click', () => loadMenu(content));

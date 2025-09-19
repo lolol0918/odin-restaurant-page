@@ -157,9 +157,10 @@ body.home {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    min-height: 80vh;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     padding: 2rem;
-    gap: 1em;
+    gap: 4em;
     justify-items: center;
     background-color: var(--color-primary);
 }
